@@ -27,6 +27,11 @@ SAML対応サンプルアプリをKeycloakへ登録します。
 - Valid redirect URIs に http://localhost:5001/saml/acs を設定して保存します。
 
 
+## AuthnRequests signedをオフに
+
+タブ : `Signature and Encryption` を確認し `Client signature required` をオフにする。
+
+
 ## 4. 動作確認
 
 
