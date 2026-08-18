@@ -1,0 +1,35 @@
+{
+    "strict": false,
+    "debug": true,
+    "sp": {
+        "entityId": "my-python-sp",
+        "assertionConsumerService": {
+            "url": "http://localhost:5001/saml/acs",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        },
+        "singleLogoutService": {
+            "url": "http://localhost:5001/saml/sls",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+        "NameIDFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+    },
+    "idp": {
+        "entityId": "http://localhost:8080/realms/demo",
+        "singleSignOnService": {
+            "url": "http://localhost:8080/realms/demo/protocol/saml",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+        "singleLogoutService": {
+            "url": "http://localhost:8080/realms/demo/protocol/saml",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+        "x509cert": ""
+    },
+    "security": {
+        "authnRequestsSigned": false,
+        "logoutRequestSigned": false,
+        "logoutResponseSigned": false,
+        "wantMessagesSigned": false,
+        "wantAssertionsSigned": false
+    }
+}

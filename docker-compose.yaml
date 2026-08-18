@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  idp:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: keycloak-idp
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+
+  sp:
+    build: ./sp
+    container_name: sample-sp-python
+    ports:
+      - "5001:5000"
+    depends_on:
+      - idp
